@@ -9,7 +9,7 @@ RUN apt-get -y install sudo
 
 # Download CockroachDB archive
 RUN curl https://binaries.cockroachdb.com/cockroach-v21.2.2.linux-amd64.tgz | \
-tar -xz && sudo cp -i cockroach-v21.2.2.linux-amd64/cockroach /usr/local/bin/
+  tar -xz && sudo cp -i cockroach-v21.2.2.linux-amd64/cockroach /usr/local/bin/
 
 # Create directory for GEOS libraries
 RUN mkdir -p /usr/local/lib/cockroach
@@ -34,6 +34,7 @@ ENV COCKROACH_CHANNEL=official-docker
 
 # Expose port
 EXPOSE 26257 9999
+
 
 ENTRYPOINT [ "cockroach" ]
 

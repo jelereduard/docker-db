@@ -7,7 +7,10 @@ services:
     ports:
       - 5432:5432
 
-  cockroach:
+  docockroachdb:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - 26257:26257
+      - 9999:9999
