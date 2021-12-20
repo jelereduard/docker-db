@@ -1,0 +1,5 @@
+docker run --name postgres-db -p 5432:5432 -e POSTGRES_PASSWORD=docker -d postgres
+docker start postgres-db -e POSTGRES_PASSWORD=docker
+docker exec -it postgres-db bash
+docker run --name dockroach -p 26257:26257 -p 8080:8080 -d dockroach
+cockroach sql --insecure --host=localhost:26257

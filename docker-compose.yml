@@ -1,0 +1,13 @@
+version: '3'
+services:
+  postgresql:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=docker
+    ports:
+      - 5432:5432
+
+  cockroach:
+    build:
+      context: .
+      dockerfile: Dockerfile
